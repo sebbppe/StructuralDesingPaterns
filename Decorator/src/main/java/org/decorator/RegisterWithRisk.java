@@ -12,7 +12,7 @@ public class RegisterWithRisk extends OperaionRegister{
     public void register(Operation operation) {
         super.register(calculateRisk(operation));
     }
-    public Operation calculateRisk(Operation operation){
+    private Operation calculateRisk(Operation operation){
         System.out.println("Calculating risk...");
         return operation.toBuilder().risk(operation.getAmount()*0.5/FACTOR_RISK).build();
     }
